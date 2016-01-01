@@ -38,6 +38,10 @@ RUN /usr/bin/easy_install supervisor
 RUN /usr/bin/easy_install supervisor-stdout
 ADD ./supervisord.conf /etc/supervisord.conf
 
+# Initialization and Startup Script
+ADD ./start.sh /start.sh
+RUN chmod 755 /start.sh
+
 # private expose
 EXPOSE 80
 
